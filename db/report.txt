@@ -1,0 +1,14 @@
+3A1 — report migracion pool completo
+Planteles: 166 (87 River + 79 rivales esperados)
+Filas temporada_jugadores: 1826
+
+--- INCONSISTENCIAS (el SQL las resuelve calculando; el doc se ignora) ---
+#Independiente 1960: Osvaldo Rubén Toriani base 78 rol base final 73 (esperado 78) -> se CALCULA, se ignora el doc
+#Independiente 1960: Roberto "Pipo" Ferreiro base 82 rol mvp final 82 (esperado 84) -> se CALCULA, se ignora el doc
+#Independiente 1960: Rubén Marino Navarro base 81 rol estrella final 77 (esperado 82) -> se CALCULA, se ignora el doc
+#Independiente 1960: Jorge Maldonado base 78 rol base final 74 (esperado 78) -> se CALCULA, se ignora el doc
+#Independiente 1960: Vladas Douksas base 74 rol estrella final 74 (esperado 75) -> se CALCULA, se ignora el doc
+#Estudiantes 2024: Matías Mansilla base 75 rol base final 77 (esperado 75) -> se CALCULA, se ignora el doc
+#Estudiantes 2025: Cristian Medina base 85 rol estrella final 85 (esperado 86) -> se CALCULA, se ignora el doc
+#River 2005: ovr_equipo sospechoso '8' -> NULL
+INFO: 918 nombres unicos; 373 aparecen en >1 temporada (misma fila jugador, correcto).

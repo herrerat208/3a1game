@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ece8dc" />
+  <title>3A1 · Ranking en vivo</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="visor">
+    <header class="cabecera">
+      <span class="eyebrow"><i aria-hidden="true"></i>Sistema conectado · lectura pública</span>
+      <h1>Ranking <em>en vivo</em></h1>
+      <p>Lo que guardan las partidas, leído desde la base compartida. Sin recargar la página.</p>
+    </header>
+
+    <section class="controles" aria-label="Controles del ranking">
+      <label for="juego">Juego</label>
+      <select id="juego">
+        <option value="3">3A1 · Draft histórico</option>
+        <option value="4">Demo vacío (sin resultados)</option>
+        <option value="9999">Juego inexistente (404)</option>
+      </select>
+      <button id="actualizar" type="button">Actualizar ahora</button>
+      <span id="estado" class="estado" role="status">Conectando…</span>
+    </section>
+
+    <ol id="ranking" class="ranking" aria-live="polite"></ol>
+    <p id="mensaje" class="mensaje" hidden></p>
+
+    <footer>
+      <span>Datos: <code id="api-base"></code></span>
+      <span>Avisos: <code id="ws-base"></code></span>
+    </footer>
+  </main>
+  <script type="module" src="./visor.js"></script>
+</body>
+</html>

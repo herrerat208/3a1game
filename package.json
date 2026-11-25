@@ -1,0 +1,32 @@
+{
+  "name": "3a1",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "ws": "node ws-server.mjs",
+    "servir:dist": "node scripts/servir_static.mjs dist 5175",
+    "servir:visor": "node scripts/servir_static.mjs visor 8080",
+    "test:sistema": "node tests-live/sistema_conectado.mjs",
+    "test:ws": "node tests-live/websocket.mjs",
+    "test:interfaz": "node tests-live/interfaz_conectada.mjs",
+    "prebuild": "node scripts/version.mjs",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test \"tests/*.mjs\"",
+    "test:backend": "node --test tests-live/backend-422.mjs",
+    "test:idempotencia": "node scripts/test_idempotencia.mjs",
+    "check:api": "node scripts/check_api.mjs",
+    "check:reglas": "node scripts/check_reglas.mjs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "dependencies": {
+    "vue": "^3.5.40",
+    "ws": "^8.23.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.8",
+    "vite": "^8.2.0"
+  }
+}

@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3A1 · Carpeta de campo (imprimible)</title>
+<style>
+  :root { --ink:#141414; --red:#c8102e; --soft:#e9e4d6; --line:#9a9a94; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #f2efe6;
+    color: var(--ink);
+    font: 13px/1.45 Arial, Helvetica, sans-serif;
+  }
+  .barra {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 18px;
+    background: #141414;
+    color: #f8f5ed;
+  }
+  .barra strong { font: 600 16px Arial, sans-serif; letter-spacing: .06em; }
+  .barra small { color: #b9beb7; }
+  .barra button {
+    cursor: pointer;
+    padding: 7px 13px;
+    border: 0;
+    border-radius: 4px;
+    background: var(--red);
+    color: #fff;
+    font: 600 12px Arial, sans-serif;
+  }
+  .hoja {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 22px auto;
+    padding: 14mm 15mm;
+    background: #fff;
+    box-shadow: 0 8px 30px rgba(0,0,0,.12);
+  }
+  h1 { margin: 0; font: 700 28px Arial, sans-serif; letter-spacing: .12em; }
+  h2 {
+    margin: 18px 0 8px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--red);
+    font: 700 14px Arial, sans-serif;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .cabeza { display: flex; align-items: flex-end; justify-content: space-between; border-bottom: 3px solid var(--ink); padding-bottom: 8px; }
+  .cabeza span { font: 10px Arial, sans-serif; color: #666; }
+  .bloque { margin: 8px 0; }
+  .fila { display: flex; gap: 10px; margin: 7px 0; align-items: baseline; }
+  .fila > label { min-width: 118px; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
+  .linea { flex: 1; border-bottom: 1px solid var(--line); min-height: 18px; }
+  .linea.corta { flex: 0 0 120px; }
+  .casillas { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 6px 0; }
+  .casillas span { font-size: 12px; }
+  .caja { display: inline-block; width: 12px; height: 12px; border: 1px solid var(--ink); vertical-align: -2px; margin-right: 5px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+  th, td { border: 1px solid #b7b7b0; padding: 5px 7px; text-align: left; }
+  th { background: var(--soft); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
+  td { height: 27px; font-size: 12px; }
+  td.n { width: 34px; text-align: center; color: #777; }
+  td.d { width: 62px; }
+  td.c { width: 54px; text-align: center; }
+  .notas { min-height: 96px; border: 1px solid #b7b7b0; padding: 8px; }
+  .pie { margin-top: 16px; padding-top: 6px; border-top: 1px solid var(--line); font-size: 9px; color: #777; letter-spacing: .06em; }
+  .pagina { break-after: page; page-break-after: always; }
+  .pagina:last-of-type { break-after: auto; page-break-after: auto; }
+  @page { size: A4; margin: 0; }
+  @media print {
+    body { background: #fff; }
+    .barra { display: none !important; }
+    .hoja { width: auto; min-height: 0; margin: 0; padding: 14mm 15mm; box-shadow: none; }
+    h2 { break-after: avoid; page-break-after: avoid; }
+    tr { break-inside: avoid; page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="barra">
+  <div><strong>3A1</strong> <small>· carpeta de campo imprimible (documento aparte, no forma parte de la página)</small></div>
+  <button type="button" onclick="window.print()">Imprimir / Guardar PDF</button>
+</div>
+<section class="hoja pagina">
+  <div class="cabeza">
+    <div><h1>3A1</h1><span>Draft histórico de River Plate · ficha de campo</span></div>
+    <div><span>Partida N°</span><div class="linea" style="width:120px"></div></div>
+  </div>
+
+  <h2>1 · Configuración</h2>
+  <div class="fila"><label>Competencia</label><div class="linea"></div></div>
+  <div class="casillas">
+    <span><i class="caja"></i>Copa Mundial 32 (16)</span>
+    <span><i class="caja"></i>Premier 20 (19)</span>
+    <span><i class="caja"></i>Liga 30 (19)</span>
+  </div>
+  <div class="fila"><label>Formación</label><div class="linea"></div><label>Estilo</label><div class="linea corta"></div></div>
+  <div class="casillas">
+    <span><i class="caja"></i>Ofensivo</span>
+    <span><i class="caja"></i>Equilibrado</span>
+    <span><i class="caja"></i>Defensivo</span>
+    <span><i class="caja"></i>Normal</span>
+    <span><i class="caja"></i>Diario</span>
+    <span><i class="caja"></i>Carrera</span>
+  </div>
+  <div class="fila"><label>Pases usados</label><div class="linea corta"></div><label>Reroll</label><div class="linea corta"></div><label>Fecha</label><div class="linea corta"></div></div>
+
+  <h2>2 · Once titular</h2>
+  <table>
+    <thead><tr><th>#</th><th>Slot</th><th>Jugador / año del plantel</th><th>Dorsal</th><th>OVR</th><th>©</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>ARQ</td><td></td><td class="d"></td><td class="c"></td><td class="c"></td></tr>
+      <tr><td class="n">2</td><td>LD</td><td></td><td class="d"></td><td class="c"></td><td class="c"></td></tr>
+      <tr><td class="n">3</td><td>DFC</td><td></td><td class="d"></td><td class="c"></td><td class="c"></td></tr>
+      <tr><td class="n">4</td><td>DFC</td><td></td><td class="d"></td><td class="c"></td><td class="c"></td></tr>
+      <tr><td class="n">5</td><td>LI</td><td></td><td class="d"></td><td class="c"></td><td class="c"></td></tr>
+      <tr><td class="n">6</td><td>MD / MC</td><td></td><td class="d"></td><td class="c"></td><td class="c"></td></tr>
+      <tr><td class="n">7</td><td>MC</td><td></td><td class="d"></td><td class="c"></td><td class="c"></td></tr>
+      <tr><td class="n">8</td><td>MI / MCO</td><td></td><td class="d"></td><td class="c"></td><td class="c"></td></tr>
+      <tr><td class="n">9</td><td>ED</td><td></td><td class="d"></td><td class="c"></td><td class="c"></td></tr>
+      <tr><td class="n">10</td><td>DC</td><td></td><td class="d"></td><td class="c"></td><td class="c"></td></tr>
+      <tr><td class="n">11</td><td>EI</td><td></td><td class="d"></td><td class="c"></td><td class="c"></td></tr>
+    </tbody>
+  </table>
+  <div class="fila"><label>OVR del equipo</label><div class="linea corta"></div><label>Capitán</label><div class="linea"></div></div>
+
+  <h2>3 · Banco</h2>
+  <table>
+    <thead><tr><th>Slot</th><th>Jugador / año del plantel</th><th>Cubre</th><th>Dorsal</th></tr></thead>
+    <tbody>
+      <tr><td>SUP1</td><td></td><td></td><td class="d"></td></tr>
+      <tr><td>SUP2</td><td></td><td></td><td class="d"></td></tr>
+      <tr><td>SUP3</td><td></td><td></td><td class="d"></td></tr>
+      <tr><td>SUP4</td><td></td><td></td><td class="d"></td></tr>
+      <tr><td>SUP5</td><td></td><td></td><td class="d"></td></tr>
+      <tr><td>SUP6</td><td></td><td></td><td class="d"></td></tr>
+      <tr><td>SUP7</td><td></td><td></td><td class="d"></td></tr>
+      <tr><td>SUP8</td><td></td><td></td><td class="d"></td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:10px;color:#666">Copa: 5 suplentes (SUP1–SUP5). Ligas: 8 suplentes. El banco debe cubrir arco, defensa, medio y ataque.</p>
+  <div class="pie">3A1 · hoja 1 de 2 · imprimir en A4, escala 100%</div>
+</section>
+<section class="hoja">
+  <div class="cabeza">
+    <div><h2 style="margin:0;border:0;font-size:20px">4 · Fecha y resultado</h2><span>Registro de partido y seguimiento de la competencia</span></div>
+    <div><span>Fecha N°</span><div class="linea" style="width:90px"></div></div>
+  </div>
+
+  <div class="fila"><label>Rival</label><div class="linea"></div><label>Temporada</label><div class="linea corta"></div></div>
+  <div class="fila"><label>¿Clásico?</label><div class="linea corta"></div><label>Estadio / fase</label><div class="linea"></div></div>
+
+  <table>
+    <thead><tr><th>Equipo</th><th>Goles</th><th>Goleadores</th><th>Asistencias</th><th>Figura</th></tr></thead>
+    <tbody>
+      <tr><td>River Plate</td><td class="c"></td><td></td><td></td><td></td></tr>
+      <tr><td>Rival</td><td class="c"></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <div class="fila"><label>Resultado</label><div class="linea corta"></div><label>Valla invicta</label><div class="linea corta"></div><label>Puntos</label><div class="linea corta"></div></div>
+
+  <h2>5 · Minuto a minuto</h2>
+  <table>
+    <thead><tr><th>Min.</th><th>Equipo</th><th>Jugador</th><th>Tipo</th><th>Marcador</th></tr></thead>
+    <tbody>
+      <tr><td class="c"></td><td></td><td></td><td></td><td class="c"></td></tr>
+      <tr><td class="c"></td><td></td><td></td><td></td><td class="c"></td></tr>
+      <tr><td class="c"></td><td></td><td></td><td></td><td class="c"></td></tr>
+      <tr><td class="c"></td><td></td><td></td><td></td><td class="c"></td></tr>
+      <tr><td class="c"></td><td></td><td></td><td></td><td class="c"></td></tr>
+      <tr><td class="c"></td><td></td><td></td><td></td><td class="c"></td></tr>
+    </tbody>
+  </table>
+
+  <h2>6 · Tarjetas y cambios</h2>
+  <div class="fila"><label>Amarillas</label><div class="linea"></div></div>
+  <div class="fila"><label>Rojas / sanciones</label><div class="linea"></div></div>
+  <div class="fila"><label>Cambios</label><div class="linea"></div></div>
+  <div class="fila"><label>Afuera la próxima</label><div class="linea"></div></div>
+
+  <h2>7 · Posiciones y notas</h2>
+  <div class="fila"><label>Puesto en tabla</label><div class="linea corta"></div><label>Puntos</label><div class="linea corta"></div><label>Dif.</label><div class="linea corta"></div></div>
+  <div class="notas"></div>
+  <div class="fila"><label>Próximo rival</label><div class="linea"></div></div>
+  <div class="pie">3A1 · hoja 2 de 2 · este documento es externo a la aplicación</div>
+</section>
+</body>
+</html>

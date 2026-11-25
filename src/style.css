@@ -1,0 +1,261 @@
+/* ==========================================================================
+   3A1 · Monumental Tactical Draft
+   Sistema visual: editorial deportivo (crema + carmesí + césped profundo).
+   Los nombres viejos (--beige, --rojo, --negro…) se mantienen como alias para
+   que los componentes existentes sigan funcionando sin tocar su lógica.
+   ========================================================================== */
+:root {
+  /* Superficies */
+  --beige: #ece8dc;            /* Lienzo estadio */
+  --beige-soft: #fdf9ed;       /* Papel cálido */
+  --blanco: #ffffff;
+  --superficie: #ffffff;
+  --superficie-baja: #f8f3e7;
+  --superficie-media: #f2eee2;
+  --superficie-alta: #ece8dc;
+  --superficie-roja: #fff4f4;
+  --superficie-dorada: #fbf6e6;
+  --superficie-verde: #eaf5ed;
+
+  /* Tinta */
+  --negro: #1a1d1a;
+  --tinta: #1a1d1a;
+  --texto-suave: #5c403f;
+  --texto-tenue: #906f6e;
+
+  /* Identidad */
+  --rojo: #c8102e;
+  --rojo-vivo: #eb1c24;
+  --rojo-hondo: #9e001f;
+  --linea: #ddd7c6;
+  --linea-fuerte: #c9c1ac;
+  --linea-roja: #e5bdbb;
+
+  /* Césped y logros */
+  --musgo: #1b4d32;
+  --verde: #225e3e;
+  --verde-claro: #35704e;
+  --texto-verde: #28332a;
+  --turf: #3ba568;
+  --oro: #c59b27;
+  --oro-claro: #e8d58b;
+
+  /* Tipografía */
+  --display: 'Oswald', 'Arial Narrow', system-ui, sans-serif;
+  --texto: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --num: 'Oswald', 'Arial Narrow', system-ui, sans-serif;
+  --mono: 'Geist', 'JetBrains Mono', ui-monospace, monospace;
+  --label: 'Geist', 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Forma y ritmo */
+  --radio: 4px;
+  --radio-md: 6px;
+  --radio-lg: 8px;
+  --sombra-dura: 2px 2px 0 rgba(26, 29, 26, .08);
+  --header-h: 66px;
+  --bottom-nav-h: 0px;
+
+  /* Temas */
+  --nav-fondo: rgba(253, 249, 237, .94);
+  --hover-claro: rgba(255, 255, 255, .6);
+  --fondo-body: radial-gradient(1100px 460px at 88% -120px, rgba(200, 16, 46, .055), transparent 62%),
+                linear-gradient(180deg, #f2eee2 0, var(--beige) 520px, var(--beige) 100%);
+  --invertir-fondo: var(--tinta);
+  --invertir-texto: #ffffff;
+  --scroll-thumb: #c9c1ac;
+
+  /* Pie y avisos: siguen siendo oscuros también en el tema claro. */
+  --panel-oscuro: #232724;
+  --panel-oscuro-texto: #fdf9ed;
+}
+
+/* Modo oscuro: carbón cálido, no negro puro. Paleta tomada de la identidad
+   visual de la historia de River: fondo #11100F, cajas #1C1A17, bordes
+   #332F2A, texto principal blanco y texto secundario gris cálido. */
+html[data-tema='oscuro'] {
+  --beige: #11100f;
+  --beige-soft: #1c1a17;
+  --blanco: #ffffff;
+  --superficie: #1c1a17;
+  --superficie-baja: #171512;
+  --superficie-media: #24211d;
+  --superficie-alta: #2a2621;
+  --superficie-roja: #2a1618;
+  --superficie-dorada: #272217;
+  --superficie-verde: #16271d;
+
+  --negro: #11100f;
+  --tinta: #ffffff;
+  --texto-suave: #9e978e;
+  --texto-tenue: #a88f6a;
+
+  --rojo: #d32f2f;
+  --rojo-vivo: #e54848;
+  --rojo-hondo: #9e001f;
+  --linea: #332f2a;
+  --linea-fuerte: #4a443c;
+  --linea-roja: #6e2a2a;
+
+  --musgo: #1b4d32;
+  --verde: #225e3e;
+  --verde-claro: #3b8a5f;
+  --texto-verde: #a8d6b6;
+  --turf: #3ba568;
+  --oro: #c5a880;
+  --oro-claro: #e8d58b;
+
+  --sombra-dura: 2px 2px 0 rgba(0, 0, 0, .38);
+  --nav-fondo: rgba(17, 16, 15, .94);
+  --hover-claro: rgba(255, 255, 255, .07);
+  --fondo-body: radial-gradient(1100px 460px at 88% -120px, rgba(211, 47, 47, .09), transparent 62%),
+                linear-gradient(180deg, #11100f 0, #171512 520px, #11100f 100%);
+  --invertir-fondo: #f2ede3;
+  --invertir-texto: #11100f;
+  --scroll-thumb: #4a443c;
+  --panel-oscuro: #1c1a17;
+  --panel-oscuro-texto: #f2ede3;
+
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+::selection { background: rgba(200, 16, 46, .18); color: var(--tinta); }
+
+:focus-visible {
+  outline: 2px solid var(--rojo);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+html { scroll-padding-top: calc(var(--header-h) + 16px); }
+
+body {
+  margin: 0;
+  background: var(--fondo-body);
+  color: var(--tinta);
+  font-family: var(--texto);
+  font-size: 16px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#app { min-height: 100svh; display: flex; flex-direction: column; }
+
+h1, h2, h3 { color: var(--tinta); margin: 0 0 8px; font-family: var(--display); text-transform: uppercase; }
+h1 { letter-spacing: -.02em; }
+h2 { font-size: 22px; line-height: 1.12; letter-spacing: -.01em; }
+h3 { font-size: 17px; line-height: 1.2; letter-spacing: .01em; }
+p { margin: 0 0 8px; }
+
+button, input, select, textarea { font: inherit; }
+
+/* Tarjeta estructural: blanca, borde fino, sin sombra difusa. */
+.panel {
+  background: var(--superficie);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  padding: 22px;
+  box-shadow: none;
+}
+.panel h2 {
+  font: 600 22px var(--display);
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+
+/* Botones base. Los componentes pueden pisarlos, pero comparten el mismo
+   lenguaje: mayúsculas condensadas, radio corto y borde de tinta. */
+.btn {
+  border: 1px solid var(--tinta);
+  background: var(--superficie);
+  color: var(--tinta);
+  border-radius: var(--radio);
+  padding: 9px 14px;
+  cursor: pointer;
+  font: 600 12px var(--display);
+  letter-spacing: .045em;
+  text-transform: uppercase;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.btn:hover { background: var(--invertir-fondo); color: var(--invertir-texto); }
+.btn.primary { background: var(--rojo); border-color: var(--rojo); color: #fff; }
+.btn.primary:hover { background: var(--rojo-vivo); border-color: var(--rojo-vivo); }
+.btn.ghost { background: transparent; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.btn.big { width: 100%; margin-top: 10px; }
+.small-btn { font-size: 11px; padding: 7px 10px; }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 20px;
+  background: var(--rojo);
+  color: #fff;
+  border-radius: 2px;
+  padding: 1px 6px;
+  font: 600 10px var(--label);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-left: 6px;
+}
+.badge.goldbg { background: var(--oro); color: #1a1d1a; }
+.badge.silverbg { background: #7e8590; }
+
+.muted { color: var(--texto-suave); }
+.small { font-size: 13px; }
+.plain { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-direction: column; gap: 4px; }
+.plain > li { padding: 6px 0; border-top: 1px solid var(--linea); font-size: 14px; }
+
+/* Una sola escala para los tres estilos de botón que conviven. */
+.btn, .primary-button, .ghost-button {
+  min-height: 40px;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+}
+.btn:active, .primary-button:active, .ghost-button:active { transform: translateY(1px); }
+
+/* Estados vacíos y de error con acción concreta, no solo texto rojo. */
+.estado-vacio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  padding: 18px 12px;
+  border: 1px dashed var(--linea-fuerte);
+  border-radius: var(--radio);
+  background: var(--beige-soft);
+  color: var(--texto-suave);
+}
+.estado-vacio > span { font-size: 22px; }
+.estado-vacio strong { color: var(--tinta); font: 600 15px var(--display); text-transform: uppercase; }
+.estado-vacio p { margin: 0; font-size: 13px; }
+.error-line { color: var(--rojo); font-size: 13px; }
+
+/* Scrollbar fina, coherente con el papel. */
+* { scrollbar-width: thin; scrollbar-color: var(--scroll-thumb) transparent; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--scroll-thumb); border: 3px solid transparent; background-clip: content-box; border-radius: 999px; }
+
+@media (max-width: 720px) {
+  :root { --header-h: 58px; --bottom-nav-h: 64px; }
+  body { font-size: 15px; }
+  .btn, .primary-button, .ghost-button, .tabs button, select,
+  .choice-grid button, .choice-row button, .live-pill-button { min-height: 44px; }
+  .panel { padding: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
