@@ -52,7 +52,7 @@ scripts/auditar_fotos.py # detecta avatares con la cara corrida; --corregir re-r
 scripts/auditar_docs.py  # auditoría de lectura (legacy del arranque).
 tests/motor.test.mjs + tests/ligas.test.mjs + tests/reglas.test.mjs  # `npm test` (offline).
 tests-live/backend-422.mjs  # `npm run test:backend` (con XAMPP; skip sin backend).
-DER.md / PRODUCT.md / README.md
+DER.md / PRODUCT.md
 docs/*.docx              # fuente de datos (no editable a mano para el juego).
 ```
 

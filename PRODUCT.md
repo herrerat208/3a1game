@@ -185,7 +185,7 @@ Sin marca paraguas en la UI por ahora.
    aplicados en 79 temporadas rivales (`db/escudos_rivales.sql`) y 87 de River
    (`db/escudos_river.sql`), con `public/escudos/` como fuente local. Queda para
    el cierre del dueño: prueba final de la consigna (pág. 18) y
-   export `.sql` desde phpMyAdmin (ver README). Apache no se verificó en vivo.
+   export `.sql` desde phpMyAdmin. Apache no se verificó en vivo.
 8. ✅ **Fase 6 (cierre de formatos)**: clasificación de grupos de Copa 32 por
    tabla completa (no por pts>=3), ranking/historial con `calendario` y
    `torneos.campeon/valla`, fair play del equipo usuario por
